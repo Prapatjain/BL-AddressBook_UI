@@ -1,0 +1,72 @@
+<!-- <div class="container">
+
+    <nav class="navbar">
+      <h2>Person Details</h2>
+      <button class="add-btn" (click)="openAddPersonModal()">Add Person</button>
+    </nav>
+  
+
+    <table class="person-table">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of personList">
+          <td>{{ person.fullName }}</td>
+          <td>{{ person.address }}</td>
+          <td>{{ person.city }}</td>
+          <td>{{ person.state }}</td>
+          <td>{{ person.zipCode }}</td>
+          <td>{{ person.phoneNumber }}</td>
+          <td>
+            <button class="edit-btn">✏️</button>
+            <button class="delete-btn" (click)="deletePerson(person)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-add-person-modal *ngIf="isModalOpen" (close)="closeAddPersonModal()"></app-add-person-modal>
+   -->
+  <!-- ...................... -->
+
+  <app-navbar (addPersonEvent)="openAddPersonModal()"></app-navbar>
+
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip Code</th>
+      <th>Phone Number</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{ person.fullName }}</td>
+      <td>{{ person.address }}</td>
+      <td>{{ person.city }}</td>
+      <td>{{ person.state }}</td>
+      <td>{{ person.zip }}</td>
+      <td>{{ person.phone }}</td>
+      <td>
+        <button (click)="editPerson(person)">✏️</button>
+        <button (click)="deletePerson(person.phone)">🗑️</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-add-person-modal *ngIf="showModal" (close)="closeModal()" (personAdded)="addPerson($event)"></app-add-person-modal>

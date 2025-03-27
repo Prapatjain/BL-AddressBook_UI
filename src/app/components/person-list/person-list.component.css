@@ -1,0 +1,55 @@
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff5e62;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  background: #ff5e62;
+  color: white;
+}
+
+td .edit, td .delete {
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+td .edit:hover {
+  color: #28a745;
+}
+
+td .delete:hover {
+  color: #dc3545;
+}
